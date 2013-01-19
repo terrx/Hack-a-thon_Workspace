@@ -37,6 +37,13 @@ public class SelectionScreen implements Screen {
 	Texture head5image;
 	Texture head6image;
 	
+	Texture mini1image;
+	Texture mini2image;
+	Texture mini3image;
+	Texture mini4image;
+	Texture mini5image;
+	Texture mini6image;
+	
 	boolean player = false;
 	boolean done = false;
 	boolean click = true;
@@ -47,6 +54,8 @@ public class SelectionScreen implements Screen {
 	boolean select5 = false;
 	boolean select6 = false;
 	
+	boolean once = false;
+	
 	boolean selecting; 
 	
 	String page = "default";
@@ -54,6 +63,8 @@ public class SelectionScreen implements Screen {
 	int monster = 0;
 	
 	ArrayList<Monster> monsters = new ArrayList<Monster>();
+	ArrayList<String> selected = new ArrayList<String>();
+	ArrayList<String> selected2 = new ArrayList<String>();
 	
 	final double[] WATER_BODY = {1, .5, 2, 1, 1, 2, 1};
 	final double[] FIRE_BODY = {2, 1, 1, .5, 1, .5, 1};
@@ -87,12 +98,12 @@ public class SelectionScreen implements Screen {
 		
 		
 		//NEED to get image files
-		//monster1image = new Texture(Gdx.files.internal("Selection.png"));
-		//monster2image = new Texture(Gdx.files.internal("background.png"));
-		//monster3image = new Texture(Gdx.files.internal("background.png"));
-		//monster4image = new Texture(Gdx.files.internal("background.png"));
-		//monster5image = new Texture(Gdx.files.internal("background.png"));
-		//monster6image = new Texture(Gdx.files.internal("background.png"));
+		monster1image = new Texture(Gdx.files.internal("RIT_Tiger_Bio.png"));
+		monster2image = new Texture(Gdx.files.internal("Owl_Bio.png"));
+		monster3image = new Texture(Gdx.files.internal("Firemoth_Bio.png"));
+		monster4image = new Texture(Gdx.files.internal("Iceturtle_Bio.png"));
+		monster5image = new Texture(Gdx.files.internal("Seahorse_Bio.png"));
+		monster6image = new Texture(Gdx.files.internal("Spider_Bio.png"));
 		
 		head1image = new Texture(Gdx.files.internal("RIT_Tiger_Headshot.png"));
 		head2image = new Texture(Gdx.files.internal("Owl_Headshot.png"));
@@ -101,6 +112,12 @@ public class SelectionScreen implements Screen {
 		head5image = new Texture(Gdx.files.internal("Seahorse_Headshot.png"));
 		head6image = new Texture(Gdx.files.internal("Spider_Headshot.png"));
 		
+		mini1image = new Texture(Gdx.files.internal("RIT_Tiger_Selected.png"));
+		mini2image = new Texture(Gdx.files.internal("Owl_Selected.png"));
+		mini3image = new Texture(Gdx.files.internal("Firemoth_Selected.png"));
+		mini4image = new Texture(Gdx.files.internal("Iceturtle_Selected.png"));
+		mini5image = new Texture(Gdx.files.internal("Seahorse_Selected.png"));
+		mini6image = new Texture(Gdx.files.internal("Spider_Selected.png"));
 		
 		donereadyimage = new Texture(Gdx.files.internal("Done_Ready.png"));
 		donedisabledimage = new Texture(Gdx.files.internal("Done_Disabled.png"));
@@ -237,8 +254,60 @@ public class SelectionScreen implements Screen {
 				monster6.height = 196;
 				
 				batch.draw(head6image, 530, 170);
-			
-			   
+			    
+				int x;
+			   for(int i =0; i< selected.size(); i++)
+			   {
+				   if(player == true && once == false)
+				   {
+					   if(3==selected.size())
+					   {
+						   break;
+					   }
+					   else if(3 == selected.size()-1)
+					   {
+						   i=3;
+						   once = true;
+					   }
+				   }
+				   if(i==0 || i==3)
+				   {
+					   x = 69;
+				   }
+				   else if(i==1 || i==4)
+				   {
+					   x = 192;
+				   }
+				   else
+				   {
+					   x = 319;
+				   }
+				   
+				   if(selected.get(i)== "RIT Tiger")
+				   {
+					   batch.draw(mini1image, x, 43);
+				   }
+				   if(selected.get(i)== "Night Stag")
+				   {
+					   batch.draw(mini2image, x, 43);
+				   }
+				   if(selected.get(i)== "Firefly")
+				   {
+					   batch.draw(mini3image, x, 43);
+				   }
+				   if(selected.get(i)== "Glaishel")
+				   {
+					   batch.draw(mini4image, x, 43);
+				   }
+				   if(selected.get(i)== "Shore-Strider")
+				   {
+					   batch.draw(mini5image, x, 43);
+				   }
+				   if(selected.get(i)== "Nettle Crawler")
+				   {
+					   batch.draw(mini6image, x, 43);
+				   }
+			   }
 			    
 			    if(player == false)
 			    {
@@ -268,7 +337,7 @@ public class SelectionScreen implements Screen {
 					 
 					 
 					 //if done selecting monsters
-					 
+					 System.out.println("X: " +touchPos.x +" Y: "+ touchPos.y);
 					if (click ==false)
 					{
 						buttons(touchPos.x, touchPos.y);
@@ -278,16 +347,16 @@ public class SelectionScreen implements Screen {
 					 {
 						 done = true;
 					 }
+					 else
+					 {
+						 done = false;
+					 }
 					 
 					if (donebutton.contains(touchPos.x, touchPos.y) && done == true)
 					{
 						//if both players are done
 						if(player == true)
 						{
-							for(int i= 0; i <monsters.size(); i++)
-							 {
-									 System.out.println("Monster" + i + " is" + monsters.get(i).getBreed()); 
-							 }
 							game.battleScreen(monsters); 
 
 							//game.goBack();
@@ -314,7 +383,7 @@ public class SelectionScreen implements Screen {
 	
 	public void printMonster()
 	{
-		batch.draw(backgroundimage2, 0, 0);
+		//batch.draw(backgroundimage2, 0, 0);
 		
 		
 		//Select button
@@ -332,82 +401,82 @@ public class SelectionScreen implements Screen {
 	    
 		if(page == "monster1")
 		{
-			//batch.draw(monster1image, 0, 0);
+			batch.draw(monster1image, 0, 0);
 			selecting=select1;
-			if(select1 == false)
+			if(select1 == false && monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select1==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
 		}
 		if(page == "monster2")
 		{
-			//batch.draw(monster2image, 0, 0);
+			batch.draw(monster2image, 0, 0);
 			selecting=select2;
 
-			if(select2 == false)
+			if(select2 == false && monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select2==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
 		}
 		if(page == "monster3")
 		{
-			//batch.draw(monster3image, 0, 0);
+			batch.draw(monster3image, 0, 0);
 			selecting=select3;
 
-			if(select3 == false)
+			if(select3 == false&& monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select3==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
 		}
 		if(page == "monster4")
 		{
-			//batch.draw(monster4image, 0, 0);
+			batch.draw(monster4image, 0, 0);
 			selecting=select4;
 
-			if(select4 == false)
+			if(select4 == false&& monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select4==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
 		}
 		if(page == "monster5")
 		{
-			//batch.draw(monster5image, 0, 0);
+			batch.draw(monster5image, 0, 0);
 			selecting=select5;
-			if(select5 == false)
+			if(select5 == false&& monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select5==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
 		}
 		if(page == "monster6")
 		{
-			//batch.draw(monster6image, 0, 0);
+			batch.draw(monster6image, 0, 0);
 			selecting=select6;
 
-			if(select6 == false)
+			if(select6 == false&& monster !=3)
 			{
 				batch.draw(selectimage, 530, 50);
 			}
-			else
+			else if(select6==true)
 			{
 				batch.draw(deselectimage, 530, 50);
 			}
@@ -427,13 +496,16 @@ public class SelectionScreen implements Screen {
 			 touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0); 
 			 camera.unproject(touchPos); 
 			
+			
 			 if(click == false)
 			 {
-				 if(selectbutton.contains(touchPos.x, touchPos.y) && selecting == false)
+				 if(selectbutton.contains(touchPos.x, touchPos.y) && selecting == false && monster!=3)
 					{
 						monster++;
 						addRemoveMonster();						
 						
+						
+							
 						if(page == "monster1")
 						 {
 							select1 = true;
@@ -617,7 +689,7 @@ public class SelectionScreen implements Screen {
 			 selecting = select6;
 			 monster1.setName("");
 			 monster1.setMaxHP(55);
-			 monster1.setBreed("Arachnis Deathicus");
+			 monster1.setBreed("Nettle Crawler");
 			 monster1.setHP(55);
 			 monster1.setId(0);
 			 monster1.attack = 30;
@@ -634,6 +706,7 @@ public class SelectionScreen implements Screen {
 		 if(selecting == false)
 		 {
 			 monsters.add(monster1);
+			 selected.add(monster1.getBreed());
 		 }
 		 else
 		 {
@@ -642,6 +715,7 @@ public class SelectionScreen implements Screen {
 				 if(monsters.get(i).getPlayerID() == monster1.getPlayerID() && monsters.get(i).getBreed() == monster1.getBreed())
 				 {
 					 monsters.remove(i);
+					 selected.remove(i);
 				 }
 			 }
 		 }

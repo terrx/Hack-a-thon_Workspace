@@ -1,17 +1,24 @@
 package com.me.Mugwomp;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GameOver implements Screen {
 
 
-		private BitmapFont font;
+	
 		private SpriteBatch batch;
 		
-		int score = 0;
+		Texture player1win;
+		Texture player2win;
+		
+		int player1count;
+		int player2count;
 		
 		OrthographicCamera camera;
 		
@@ -20,29 +27,33 @@ public class GameOver implements Screen {
 		    camera.setToOrtho(false, 800, 480);
 		    
 		    batch = new SpriteBatch();
-		    
-		    font = new BitmapFont();
-		}
-		
-		public void setScore(int score) {
-			this.score = score;
+		  
 		}
 
 		@Override
 		public void render(float delta) {
 			// TODO Auto-generated method stub
 			
-			//Gdx.gl.glClearColor(0, 0, 0, 1);
-		    //Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+			Gdx.gl.glClearColor(0, 0, 0, 1);
+		    Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 			
 			camera.update();
 			
 			batch.begin();
-			font.setScale(2, 2);
-			font.draw(batch, "Game Over", 325, 240);
-			font.setScale(1, 1);
-			String s = Integer.toString(score);
-			font.draw(batch, "Your score: " + s, 350, 210);
+			
+			
+			if(player1count == 0)
+			{
+				player2win = new Texture(Gdx.files.internal("Player_2_Win.png"));
+				batch.draw(player2win, 0, 0);
+			}
+			if(player2count == 0)
+			{
+
+				player1win = new Texture(Gdx.files.internal("Player_1_Win.png"));
+				batch.draw(player1win, 0, 0);
+			}
+		
 			batch.end();
 		}
 

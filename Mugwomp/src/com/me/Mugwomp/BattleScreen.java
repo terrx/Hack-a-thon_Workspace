@@ -45,6 +45,13 @@ public class BattleScreen implements Screen {
 	
 	SpriteBatch batch;
 	
+	boolean dead1 = false;
+	boolean dead2 = false;
+	boolean dead3 = false;
+	boolean dead4 = false;
+	boolean dead5 = false;
+	boolean dead6 = false;
+	
 	TerrainSquare currentTS = null;
 	int currentPlayer = 0;
 	
@@ -201,7 +208,8 @@ public class BattleScreen implements Screen {
 		
 		if(player1count == 0 || player2count == 0)
 		{
-			//GAMEOVER!
+			//GAMEOVER
+			game.gameOver(player1count, player2count);
 		}
 		else
 		{
