@@ -97,10 +97,18 @@ public class BattleScreen implements Screen {
 	    Texture.setEnforcePotImages(false);
 	    
 	    monsterTextures.add(new Texture(Gdx.files.internal("RIT_Tiger_Idle_Small.png")));
-	    monsterTextures.add(new Texture(Gdx.files.internal("RIT_Tiger_Idle_Small_2.png")));
+	    monsterTextures.add(new Texture(Gdx.files.internal("Owl_Battlefield.png")));
+	    monsterTextures.add(new Texture(Gdx.files.internal("Firemoth_Battlefield.png")));
+	    monsterTextures.add(new Texture(Gdx.files.internal("Iceturtle_Battlefield.png")));
+	    monsterTextures.add(new Texture(Gdx.files.internal("Seahorse_Battlefield.png")));
+	    monsterTextures.add(new Texture(Gdx.files.internal("Spider_Battlefield.png")));
 	    
 	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("RIT_Tiger_Idle_Small_flip.png")));
-	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("RIT_Tiger_Idle_Small_2_flip.png")));
+	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Owl_Battlefield_flip.png")));
+	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Firemoth_Battlefield_flip.png")));
+	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Iceturtle_Battlefield_flip.png")));
+	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Seahorse_Battlefield_flip.png")));
+	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Spider_Battlefield_flip.png")));
 	    
 	    background = new Texture(Gdx.files.internal("Battlefield_Grass.png"));
 

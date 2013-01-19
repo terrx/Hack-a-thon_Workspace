@@ -255,59 +255,98 @@ public class SelectionScreen implements Screen {
 				
 				batch.draw(head6image, 530, 170);
 			    
-				int x;
-			   for(int i =0; i< selected.size(); i++)
-			   {
-				   if(player == true && once == false)
-				   {
-					   if(3==selected.size())
+				int x=0;
+				
+				if(player == false)
+				{
+					for(int i =0; i< selected.size(); i++)
 					   {
-						   break;
+						   if(i==0)
+						   {
+							   x = 69;
+						   }
+						   else if(i==1)
+						   {
+							   x = 192;
+						   }
+						   else if(i==2)
+						   {
+							   x = 319;
+						   }
+						   
+						   
+						   if(selected.get(i)== "RIT Tiger")
+						   {
+							   batch.draw(mini1image, x, 43);
+						   }
+						   if(selected.get(i)== "Night Stag")
+						   {
+							   batch.draw(mini2image, x, 43);
+						   }
+						   if(selected.get(i)== "Firefly")
+						   {
+							   batch.draw(mini3image, x, 43);
+						   }
+						   if(selected.get(i)== "Glaishel")
+						   {
+							   batch.draw(mini4image, x, 43);
+						   }
+						   if(selected.get(i)== "Shore-Strider")
+						   {
+							   batch.draw(mini5image, x, 43);
+						   }
+						   if(selected.get(i)== "Nettle Crawler")
+						   {
+							   batch.draw(mini6image, x, 43);
+						   }
 					   }
-					   else if(3 == selected.size()-1)
+				}
+				
+				else if(player == true)
+				{
+					for(int i =3; i< selected.size(); i++)
 					   {
-						   i=3;
-						   once = true;
+						   if(i==3)
+						   {
+							   x = 69;
+						   }
+						   else if(i==4)
+						   {
+							   x = 192;
+						   }
+						   else if(i==5)
+						   {
+							   x = 319;
+						   }
+						   
+						   
+						   if(selected.get(i)== "RIT Tiger")
+						   {
+							   batch.draw(mini1image, x, 43);
+						   }
+						   if(selected.get(i)== "Night Stag")
+						   {
+							   batch.draw(mini2image, x, 43);
+						   }
+						   if(selected.get(i)== "Firefly")
+						   {
+							   batch.draw(mini3image, x, 43);
+						   }
+						   if(selected.get(i)== "Glaishel")
+						   {
+							   batch.draw(mini4image, x, 43);
+						   }
+						   if(selected.get(i)== "Shore-Strider")
+						   {
+							   batch.draw(mini5image, x, 43);
+						   }
+						   if(selected.get(i)== "Nettle Crawler")
+						   {
+							   batch.draw(mini6image, x, 43);
+						   }
 					   }
-				   }
-				   if(i==0 || i==3)
-				   {
-					   x = 69;
-				   }
-				   else if(i==1 || i==4)
-				   {
-					   x = 192;
-				   }
-				   else
-				   {
-					   x = 319;
-				   }
-				   
-				   if(selected.get(i)== "RIT Tiger")
-				   {
-					   batch.draw(mini1image, x, 43);
-				   }
-				   if(selected.get(i)== "Night Stag")
-				   {
-					   batch.draw(mini2image, x, 43);
-				   }
-				   if(selected.get(i)== "Firefly")
-				   {
-					   batch.draw(mini3image, x, 43);
-				   }
-				   if(selected.get(i)== "Glaishel")
-				   {
-					   batch.draw(mini4image, x, 43);
-				   }
-				   if(selected.get(i)== "Shore-Strider")
-				   {
-					   batch.draw(mini5image, x, 43);
-				   }
-				   if(selected.get(i)== "Nettle Crawler")
-				   {
-					   batch.draw(mini6image, x, 43);
-				   }
-			   }
+				}
+			   
 			    
 			    if(player == false)
 			    {
@@ -619,7 +658,7 @@ public class SelectionScreen implements Screen {
 			 monster1.setMaxHP(60);
 			 monster1.setBreed("Night Stag");
 			 monster1.setHP(60);
-			 monster1.setId(0);
+			 monster1.setId(1);
 			 monster1.attack = 20;
 			 monster1.defense = 16;
 			 monster1.speed = 25;
@@ -637,7 +676,7 @@ public class SelectionScreen implements Screen {
 			 monster1.setMaxHP(50);
 			 monster1.setBreed("Firefly");
 			 monster1.setHP(50);
-			 monster1.setId(0);
+			 monster1.setId(2);
 			 monster1.attack = 15;
 			 monster1.defense = 15;
 			 monster1.speed = 20;
@@ -655,7 +694,7 @@ public class SelectionScreen implements Screen {
 			 monster1.setMaxHP(90);
 			 monster1.setBreed("Glaishel");
 			 monster1.setHP(90);
-			 monster1.setId(0);
+			 monster1.setId(3);
 			 monster1.attack = 20;
 			 monster1.defense = 30;
 			 monster1.speed = 15;
@@ -673,7 +712,7 @@ public class SelectionScreen implements Screen {
 			 monster1.setMaxHP(65);
 			 monster1.setBreed("Shore-Strider");
 			 monster1.setHP(65);
-			 monster1.setId(0);
+			 monster1.setId(4);
 			 monster1.attack = 20;
 			 monster1.defense = 18;
 			 monster1.speed = 25;
@@ -691,7 +730,7 @@ public class SelectionScreen implements Screen {
 			 monster1.setMaxHP(55);
 			 monster1.setBreed("Nettle Crawler");
 			 monster1.setHP(55);
-			 monster1.setId(0);
+			 monster1.setId(5);
 			 monster1.attack = 30;
 			 monster1.defense = 18;
 			 monster1.speed = 20;
