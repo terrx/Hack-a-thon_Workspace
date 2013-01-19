@@ -59,6 +59,9 @@ public class BattleScreen implements Screen {
 	Texture snapinfo;
 	Texture beachedinfo;
 	
+	Texture player1;
+	Texture player2;
+	
 	ArrayList<Texture> monsterTextures = new ArrayList<Texture>();
 	ArrayList<Texture> flipedMonsterTextures = new ArrayList<Texture>();
 	
@@ -146,6 +149,9 @@ public class BattleScreen implements Screen {
 	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Seahorse_Battlefield_flip.png")));
 	    flipedMonsterTextures.add(new Texture(Gdx.files.internal("Spider_Battlefield_flip.png")));
 	    
+	    player1=(new Texture(Gdx.files.internal("Player_1.png")));
+	    player2=(new Texture(Gdx.files.internal("Player_2.png")));
+	    
 	    brickbash= (new Texture(Gdx.files.internal("Brick_Bash.png")));
 	    beached= (new Texture(Gdx.files.internal("Beached.png")));
 		buck= new Texture(Gdx.files.internal("Buck.png"));
@@ -206,12 +212,21 @@ public class BattleScreen implements Screen {
 		batch.draw(background,0,0);
 		drawMenu();
 		
+		
 		for(int x = 0; x < 6; x++) {
         	for(int y = 0; y < 3; y++) {
         		field.get(x,y).render(batch,monsterTextures,flipedMonsterTextures);
         	}
         }
 		
+		if(currentPlayer == 0)
+		{
+			batch.draw(player1,250,740);
+		}
+		else
+		{
+			batch.draw(player2,250,740);
+		}
 		batch.end();
 		
 		checkDeath();
@@ -311,6 +326,8 @@ public class BattleScreen implements Screen {
 	}
 
 	private void drawMenu() {
+		
+	
 		
 		if(player1count == 0 || player2count == 0)
 		{
@@ -695,6 +712,7 @@ public class BattleScreen implements Screen {
 				{
 						click = false;
 				}
+				
 				
 			} else {
 				font.setColor(0, 0, 0, 1);
