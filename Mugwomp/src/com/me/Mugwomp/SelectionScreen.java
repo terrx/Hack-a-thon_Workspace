@@ -635,7 +635,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster1")
 		 {
 			 selecting = select1;
-			 monster1.setName("");
+			 monster1.setName("RITchie");
 			 monster1.setMaxHP(75);
 			 monster1.setBreed("RIT Tiger");
 			 monster1.setHP(75);
@@ -654,7 +654,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster2")
 		 {
 			 selecting = select2;
-			 monster1.setName("");
+			 monster1.setName("Sheila");
 			 monster1.setMaxHP(60);
 			 monster1.setBreed("Night Stag");
 			 monster1.setHP(60);
@@ -672,7 +672,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster3")
 		 {
 			 selecting = select3;
-			 monster1.setName("");
+			 monster1.setName("Frank");
 			 monster1.setMaxHP(50);
 			 monster1.setBreed("Firefly");
 			 monster1.setHP(50);
@@ -690,7 +690,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster4")
 		 {
 			 selecting = select4;
-			 monster1.setName("");
+			 monster1.setName("Terras");
 			 monster1.setMaxHP(90);
 			 monster1.setBreed("Glaishel");
 			 monster1.setHP(90);
@@ -708,7 +708,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster5")
 		 {
 			 selecting = select5;
-			 monster1.setName("");
+			 monster1.setName("Fritz");
 			 monster1.setMaxHP(65);
 			 monster1.setBreed("Shore-Strider");
 			 monster1.setHP(65);
@@ -726,7 +726,7 @@ public class SelectionScreen implements Screen {
 		 if(page == "monster6")
 		 {
 			 selecting = select6;
-			 monster1.setName("");
+			 monster1.setName("Demon");
 			 monster1.setMaxHP(55);
 			 monster1.setBreed("Nettle Crawler");
 			 monster1.setHP(55);
