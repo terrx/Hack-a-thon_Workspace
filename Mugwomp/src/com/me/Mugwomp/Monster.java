@@ -115,5 +115,9 @@ public class Monster {
 	{
 		hp -= (damage*bodyRes[type]);
 	}
+
+	public boolean isDead() {
+		return hp < 1;
+	}
 	
 }

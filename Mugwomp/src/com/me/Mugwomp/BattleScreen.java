@@ -176,6 +176,8 @@ public class BattleScreen implements Screen {
 		
 		batch.end();
 		
+		checkDeath();
+		
 		switch(chooseVsRun) {
 			case CHOOSE:
 				choose();
@@ -189,6 +191,27 @@ public class BattleScreen implements Screen {
 			case PLACE:
 				place();
 				break;
+		}
+	}
+
+	private void checkDeath() {
+		ArrayList<Monster> dead = new ArrayList<Monster>();
+		for(Monster m : monsters) {
+			if(m.isDead()) {
+				if(m.getPlayerID() == 0) player1count--;
+				if(m.getPlayerID() == 1) player2count--;
+				dead.add(m);
+			}
+		}
+		for(Monster m : dead) {
+			monsters.remove(m);
+		}
+		for(int x = 0; x < 6; x++) {
+        	for(int y = 0; y < 3; y++) {
+        		if(dead.contains(field.get(x, y).getMonster())) {
+        			field.get(x, y).setMonster(null);
+        		}
+        	}
 		}
 	}
 
