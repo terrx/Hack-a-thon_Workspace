@@ -201,7 +201,7 @@ public class BattleScreen implements Screen {
 		
 		if(player1count == 0 || player2count == 0)
 		{
-			//GAMEOVER
+			//GAMEOVER!
 		}
 		else
 		{
