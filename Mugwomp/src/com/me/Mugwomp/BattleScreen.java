@@ -40,6 +40,24 @@ public class BattleScreen implements Screen {
 	Texture slash;
 	Texture snap;
 	Texture beached;
+	Texture brickbashinfo;
+	Texture buckinfo;
+	Texture flamewaveinfo;
+	Texture floodinfo;
+	Texture frostinfo;
+	Texture gutinfo;
+	Texture mudtuginfo;
+	Texture poisoninfo;
+	Texture pounceinfo;
+	Texture raminfo;
+	Texture serenadeinfo;
+	Texture shieldinfo;
+	Texture swapinfo;
+	Texture torchinfo;
+	Texture webinfo;
+	Texture slashinfo;
+	Texture snapinfo;
+	Texture beachedinfo;
 	
 	ArrayList<Texture> monsterTextures = new ArrayList<Texture>();
 	ArrayList<Texture> flipedMonsterTextures = new ArrayList<Texture>();
@@ -146,6 +164,26 @@ public class BattleScreen implements Screen {
 		swap=(new Texture(Gdx.files.internal("Swap.png")));
 		torch=(new Texture(Gdx.files.internal("Torch.png")));
 		web=(new Texture(Gdx.files.internal("Web.png")));
+		
+
+		  brickbashinfo= (new Texture(Gdx.files.internal("Brick_Bash_Info.png")));
+		  beachedinfo= (new Texture(Gdx.files.internal("Beached_Info.png")));
+			buckinfo= new Texture(Gdx.files.internal("Buck_Info.png"));
+			flamewaveinfo= (new Texture(Gdx.files.internal("Flame_Wave_Info.png")));
+			floodinfo=(new Texture(Gdx.files.internal("Flood_Info.png")));
+			frostinfo=(new Texture(Gdx.files.internal("Frost_Shield_Info.png")));
+			gutinfo=(new Texture(Gdx.files.internal("Gut_Info.png")));
+			mudtuginfo=(new Texture(Gdx.files.internal("Mud_Tug_Info.png")));
+			poisoninfo=(new Texture(Gdx.files.internal("Poison_Info.png")));
+			pounceinfo=(new Texture(Gdx.files.internal("Pounce_Info.png")));
+			raminfo=(new Texture(Gdx.files.internal("Ram_Info.png")));
+			serenadeinfo=(new Texture(Gdx.files.internal("Serenade_Info.png")));
+			slashinfo=(new Texture(Gdx.files.internal("Slash_Info.png")));
+			snapinfo=(new Texture(Gdx.files.internal("Snap_Info.png")));
+			//shieldinfo=(new Texture(Gdx.files.internal("Shield_Info.png")));
+			swapinfo=(new Texture(Gdx.files.internal("Swap_Info.png")));
+			torchinfo=(new Texture(Gdx.files.internal("Torch_Info.png")));
+			webinfo=(new Texture(Gdx.files.internal("Web_Info.png")));
 	    
 	    background = new Texture(Gdx.files.internal("Battlefield_Grass.png"));
 
@@ -292,85 +330,121 @@ public class BattleScreen implements Screen {
 				if(currentTS.getMonster().action1.getName() == "Brick Bash")
 				{
 					batch.draw(brickbash, 92, 223);
+					batch.draw(brickbashinfo, 330, 223);
+					
 				}
 				if(currentTS.getMonster().action1.getName() == "Slash")
 				{
-					batch.draw(slash, 92, 223);				
+					batch.draw(slash, 92, 223);	
+					batch.draw(slashinfo, 330, 223);
+
 				}
 				if(currentTS.getMonster().action1.getName() == "Mud Tug")
 				{
 					batch.draw(mudtug, 92, 223);	
+					batch.draw(mudtuginfo, 330, 223);
+
 				}
 				if(currentTS.getMonster().action1.getName() == "Gut")
 				{
-					batch.draw(gut, 92, 223);				
+					batch.draw(gut, 92, 223);
+					batch.draw(gutinfo, 330, 223);
+
 				}
 				if(currentTS.getMonster().action1.getName() == "Serenade")
 				{
-					batch.draw(serenade, 92, 223);				
+					batch.draw(serenade, 92, 223);	
+					batch.draw(serenadeinfo, 330, 223);
+
 				}
 				if(currentTS.getMonster().action1.getName() == "Swap")
 				{
-					batch.draw(swap, 92, 223);				
+					batch.draw(swap, 92, 223);
+					batch.draw(swapinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Pounce")
 				{					
-					batch.draw(pounce, 92, 223);		
+					batch.draw(pounce, 92, 223);
+					batch.draw(pounceinfo, 330, 223);
+
 				}
 				if(currentTS.getMonster().action1.getName() == "Poison")
 				{
-					batch.draw(poison, 92, 223);				
+					batch.draw(poison, 92, 223);
+					batch.draw(poisoninfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Web")
 				{
-					batch.draw(web, 92, 223);				
+					batch.draw(web, 92, 223);
+					batch.draw(webinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Buck")
 				{
-					batch.draw(buck, 92, 223);				
+					batch.draw(buck, 92, 223);
+					batch.draw(buckinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Flood")
 				{
-					batch.draw(flood, 92, 223);				
+					batch.draw(flood, 92, 223);
+					batch.draw(floodinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Beached")
 				{
-					batch.draw(beached, 92, 223);				
+					batch.draw(beached, 92, 223);
+					batch.draw(beachedinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Frost")
 				{
-					batch.draw(frost, 92, 223);				
+					batch.draw(frost, 92, 223);	
+					batch.draw(frostinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Shield")
 				{
-					batch.draw(shield, 92, 223);				
+					batch.draw(shield, 92, 223);
+					//batch.draw(shieldinfo, 130, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Snap")
 				{
-					batch.draw(snap, 92, 223);				
+					batch.draw(snap, 92, 223);	
+					batch.draw(snapinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Flamewave")
 				{
-					batch.draw(flamewave, 92, 223);				
+					batch.draw(flamewave, 92, 223);	
+					batch.draw(flamewaveinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Torch")
 				{
-					batch.draw(torch, 92, 223);				
+					batch.draw(torch, 92, 223);	
+					batch.draw(torchinfo, 330, 223);
+
 
 				}
 				if(currentTS.getMonster().action1.getName() == "Ram")
 				{
-					batch.draw(ram, 92, 223);				
+					batch.draw(ram, 92, 223);							
+					batch.draw(raminfo, 330, 223);
+		
 
 				}
 				
@@ -382,85 +456,103 @@ public class BattleScreen implements Screen {
 				if(currentTS.getMonster().action2.getName() == "Brick Bash")
 				{
 					batch.draw(brickbash, 92, 134);
+					batch.draw(brickbashinfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Slash")
 				{
-					batch.draw(slash, 92, 134);				
+					batch.draw(slash, 92, 134);	
+					batch.draw(slashinfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Mud Tug")
 				{
-					batch.draw(mudtug, 92, 134);	
+					batch.draw(mudtug, 92, 134);
+					batch.draw(mudtuginfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Gut")
 				{
-					batch.draw(gut, 92, 134);				
+					batch.draw(gut, 92, 134);
+					batch.draw(gutinfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Serenade")
 				{
-					batch.draw(serenade, 92, 134);				
+					batch.draw(serenade, 92, 134);		
+					batch.draw(serenadeinfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Swap")
 				{
-					batch.draw(swap, 92, 134);				
+					batch.draw(swap, 92, 134);	
+					batch.draw(swapinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Pounce")
 				{					
-					batch.draw(pounce, 92, 134);		
+					batch.draw(pounce, 92, 134);
+					batch.draw(pounceinfo, 330, 134);
 				}
 				if(currentTS.getMonster().action2.getName() == "Poison")
 				{
-					batch.draw(poison, 92, 134);				
+					batch.draw(poison, 92, 134);
+					batch.draw(poisoninfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Web")
 				{
-					batch.draw(web, 92, 134);				
+					batch.draw(web, 92, 134);	
+					batch.draw(webinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Buck")
 				{
-					batch.draw(buck, 92, 134);				
+					batch.draw(buck, 92, 134);
+					batch.draw(buckinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Flood")
 				{
-					batch.draw(flood, 92, 134);				
+					batch.draw(flood, 92, 134);	
+					batch.draw(floodinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Beached")
 				{
-					batch.draw(beached, 92, 134);				
+					batch.draw(beached, 92, 134);	
+					batch.draw(beachedinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Frost")
 				{
-					batch.draw(frost, 92, 134);				
+					batch.draw(frost, 92, 134);
+					batch.draw(frostinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Shield")
 				{
-					batch.draw(shield, 92, 134);				
+					batch.draw(shield, 92, 134);
+					//batch.draw(shieldinfo, 130, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Snap")
 				{
-					batch.draw(snap, 92, 134);				
+					batch.draw(snap, 92, 134);	
+					batch.draw(snapinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Flamewave")
 				{
-					batch.draw(flamewave, 92, 134);				
+					batch.draw(flamewave, 92, 134);		
+					batch.draw(flamewaveinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Torch")
 				{
-					batch.draw(torch, 92, 134);				
+					batch.draw(torch, 92, 134);
+					batch.draw(torchinfo, 330, 134);
 
 				}
 				if(currentTS.getMonster().action2.getName() == "Ram")
 				{
-					batch.draw(ram, 92, 134);				
+					batch.draw(ram, 92, 134);	
+					batch.draw(raminfo, 330, 134);
 
 				}
 				
@@ -471,86 +563,104 @@ public class BattleScreen implements Screen {
 				
 				if(currentTS.getMonster().action3.getName() == "Brick Bash")
 				{
-					batch.draw(brickbash, 92, 48);
+					batch.draw(brickbash, 92, 43);
+					batch.draw(brickbashinfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Slash")
 				{
-					batch.draw(slash, 92, 48);				
+					batch.draw(slash, 92, 43);	
+					batch.draw(slashinfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Mud Tug")
 				{
-					batch.draw(mudtug, 92, 48);	
+					batch.draw(mudtug, 92, 43);	
+					batch.draw(mudtuginfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Gut")
 				{
-					batch.draw(gut, 92, 48);				
+					batch.draw(gut, 92, 43);
+					batch.draw(gutinfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Serenade")
 				{
-					batch.draw(serenade, 92, 48);				
+					batch.draw(serenade, 92, 43);
+					batch.draw(serenadeinfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Swap")
 				{
-					batch.draw(swap, 92, 48);				
+					batch.draw(swap, 92, 43);	
+					batch.draw(swapinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Pounce")
 				{					
-					batch.draw(pounce, 92, 48);		
+					batch.draw(pounce, 92, 43);	
+					batch.draw(pounceinfo, 330, 43);
 				}
 				if(currentTS.getMonster().action3.getName() == "Poison")
 				{
-					batch.draw(poison, 92, 48);				
+					batch.draw(poison, 92, 43);
+					batch.draw(poisoninfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Web")
 				{
-					batch.draw(web, 92, 48);				
+					batch.draw(web, 92, 43);
+					batch.draw(webinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Buck")
 				{
-					batch.draw(buck, 92, 48);				
+					batch.draw(buck, 92, 43);
+					batch.draw(buckinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Flood")
 				{
-					batch.draw(flood, 92, 48);				
+					batch.draw(flood, 92, 43);
+					batch.draw(floodinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Beached")
 				{
-					batch.draw(beached, 92, 48);				
+					batch.draw(beached, 92, 43);
+					batch.draw(beachedinfo, 330, 43);
 
 				}
-				if(currentTS.getMonster().action2.getName() == "Frost")
+				if(currentTS.getMonster().action3.getName() == "Frost")
 				{
-					batch.draw(frost, 92, 48);				
+					batch.draw(frost, 92, 43);	
+					batch.draw(frostinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Shield")
 				{
-					batch.draw(shield, 92, 48);				
+					batch.draw(shield, 92, 43);
+					//batch.draw(shieldinfo, 130, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Snap")
 				{
-					batch.draw(snap, 92, 48);				
+					batch.draw(snap, 92, 43);
+					batch.draw(snapinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Flamewave")
 				{
-					batch.draw(flamewave, 92, 48);				
+					batch.draw(flamewave, 92, 43);
+					batch.draw(flamewaveinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Torch")
 				{
-					batch.draw(torch, 92, 48);				
+					batch.draw(torch, 92, 43);
+					batch.draw(torchinfo, 330, 43);
 
 				}
 				if(currentTS.getMonster().action3.getName() == "Ram")
 				{
-					batch.draw(ram, 92, 48);				
+					batch.draw(ram, 92, 43);
+					batch.draw(raminfo, 330, 43);
 
 				}
 				
